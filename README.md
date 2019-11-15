@@ -1,12 +1,17 @@
----
-description: Podstawowe koncepcje i założenia
----
+# CRON
 
-# Wstęp
+### Kernel
 
-## Podział na moduły
+Automatyczne akcje zapisane są w klasie  **app\Console\Kernel.php** w metodzie schedule\(\). Każda z linii wywołujących komendę odpowiada wpisowi do CRONA. Komentarz przy każdej komendzie wskazuje na klasę, która zostaje uruchomiona w danej akcji.
 
-Treści w SuiteCRM oraz w aplikacji CoreA są podzielone na modułu. **Jeden moduł odpowiada jednej tabeli** w bazie danych \(może, ale nie musi posiadać jeszcze inne połączone tabele\).
+```php
+# app\Console\Commands\CleanerForEveryFiveMinutes.php
+$schedule->command('cleaners')->everyFiveMinutes();
+```
 
-Pola niestandardowe są zapisywane w tabelach posiadających nazwy z suffixem \[\_cstm\].
+Każdy wpis zawiera również informację na temat tego, w jakich interwałach jest uruchamiana dana akcja.
+
+### Commands
+
+
 
