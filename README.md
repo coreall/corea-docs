@@ -1,12 +1,12 @@
-# Initial page
+---
+description: Podstawowe koncepcje i założenia
+---
 
-## Can I become who I want to be?
+# Wstęp
 
-That's a tough question but thankfully, our team is on it. Please bear with us while we're investigating.
+## Podział na moduły
 
-## Have you had a chance to answer the previous question?
+Treści w SuiteCRM oraz w aplikacji CoreA są podzielone na modułu. **Jeden moduł odpowiada jednej tabeli** w bazie danych \(może, ale nie musi posiadać jeszcze inne połączone tabele\).
 
-Yes, after a few months we finally found the answer. Sadly, Mike is on vacations right now so I'm afraid we are not able to provide the answer at this point.
-
-
+Pola niestandardowe są zapisywane w tabelach posiadających nazwy z suffixem \[\_cstm\].
 
