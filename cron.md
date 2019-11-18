@@ -178,23 +178,73 @@ Wrzuca do workera następujące zadania:
 
 Porządkuje uprawnienia na poziomie SuiteCRM wykonując następujące zadania:
 
-* **RemoveDeletedSecurityGroupsRecords**  Z tabeli securitygroups\_record usuwa rekordy oznaczone jako \[deleted\]
-* **ManageUnassignedPolishAccountsJob**  Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup. Dotyczy "polskich" rekordów.
-* **ManageUnassignedRomanianAccountsJob**  Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup. Dotyczy "rumuńskich" rekordów.
-* **ManageUnassignedInternationalAccountsJob**  Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup.
-* **ManageAccountsAssignedToPolishSalesmakersJob**  Rekordy przypisane do "polskiego" handlowca przypisuje do grupy polskich handlowców i usuwa z grupy \[Unassigned\]
-* **ManageAccountsAssignedToRomanianSalesmakersJob**  Rekordy przypisane do "rumuńskiego" handlowca przypisuje do grupy rumuńskich handlowców i usuwa z grupy \[Unassigned\]
-* **ManageAccountsAssignedToInternationalSalesmakersJob**  Rekordy przypisane do "zagranicznego" handlowca przypisuje do grupy zagranicznych handlowców i usuwa z grupy \[Unassigned\]
-* **ManageContactsJob**  Usuwa grupy dostępu z rekordów w module Kontatkty. Założenie jest takie, że kontaktami zarządza się na poziomie ogólnych uprawnień, a nie przez grupy. 
-* **ManageActivitiesGroupsJob**  Usuwa grupy dostępu z rekordów w modułach Rozmowy, Zadania, Spotkania. Założenie jest takie, że kontaktami zarządza się na poziomie ogólnych uprawnień, a nie poprzez grupy. 
-* **ManageProductsInStandardPriceListJob**  Przypisuje wybrane produkty do standardowego cennika. 
-* **ManageProductsInRomanianPriceListJob**  Przypisuje wybrane produkty do rumuńskiego cennika.
-* **ManageOpportunitiesAssignedToSingleSalesmakerJob**  Zarządza grupami dostępu dla leadów przypisanych do jednego, wybranego handlowca.
-* **ManageOpportunitiesAssignedToCooperationGroupJob**  Zarządza grupami dostępu dla leadów przypisanych do grup kooperacji
-* **ManageQuotesAssignedToSingleSalesmakerJob**  Zarządza grupami dostępu dla ofert przypisanych do jednego, wybranego handlowca.
-* **ManageQuotesAssignedToCooperationGroupJob**  Zarządza grupami dostępu dla ofert przypisanych do grup kooperacji
-* **ManageContractsAssignedToSingleSalesmakerJob**  Zarządza grupami dostępu dla zamówień przypisanych do jednego, wybranego handlowca.
-* **ManageContractAssignedToCooperationGroupJob** Zarządza grupami dostępu dla zamówień przypisanych do grup kooperacji
+**RemoveDeletedSecurityGroupsRecords** 
+
+Z tabeli securitygroups\_record usuwa rekordy oznaczone jako \[deleted\]
+
+**ManageUnassignedPolishAccountsJob** 
+
+Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup. Dotyczy "polskich" rekordów.
+
+**ManageUnassignedRomanianAccountsJob** 
+
+Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup. Dotyczy "rumuńskich" rekordów.
+
+**ManageUnassignedInternationalAccountsJob** 
+
+Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup.
+
+**ManageAccountsAssignedToPolishSalesmakersJob** 
+
+Rekordy przypisane do "polskiego" handlowca przypisuje do grupy polskich handlowców i usuwa z grupy \[Unassigned\]
+
+**ManageAccountsAssignedToRomanianSalesmakersJob** 
+
+Rekordy przypisane do "rumuńskiego" handlowca przypisuje do grupy rumuńskich handlowców i usuwa z grupy \[Unassigned\]
+
+**ManageAccountsAssignedToInternationalSalesmakersJob** 
+
+Rekordy przypisane do "zagranicznego" handlowca przypisuje do grupy zagranicznych handlowców i usuwa z grupy \[Unassigned\]
+
+**ManageContactsJob** 
+
+Usuwa grupy dostępu z rekordów w module Kontatkty. Założenie jest takie, że kontaktami zarządza się na poziomie ogólnych uprawnień, a nie przez grupy. 
+
+**ManageActivitiesGroupsJob** 
+
+Usuwa grupy dostępu z rekordów w modułach Rozmowy, Zadania, Spotkania. Założenie jest takie, że kontaktami zarządza się na poziomie ogólnych uprawnień, a nie poprzez grupy. 
+
+**ManageProductsInStandardPriceListJob** 
+
+Przypisuje wybrane produkty do standardowego cennika. 
+
+**ManageProductsInRomanianPriceListJob** 
+
+Przypisuje wybrane produkty do rumuńskiego cennika.
+
+**ManageOpportunitiesAssignedToSingleSalesmakerJob** 
+
+Zarządza grupami dostępu dla leadów przypisanych do jednego, wybranego handlowca.
+
+**ManageOpportunitiesAssignedToCooperationGroupJob** 
+
+Zarządza grupami dostępu dla leadów przypisanych do grup kooperacji
+
+**ManageQuotesAssignedToSingleSalesmakerJob** 
+
+Zarządza grupami dostępu dla ofert przypisanych do jednego, wybranego handlowca.
+
+**ManageQuotesAssignedToCooperationGroupJob** 
+
+Zarządza grupami dostępu dla ofert przypisanych do grup kooperacji
+
+**ManageContractsAssignedToSingleSalesmakerJob** 
+
+Zarządza grupami dostępu dla zamówień przypisanych do jednego, wybranego handlowca.
+
+**ManageContractAssignedToCooperationGroupJob**
+
+Zarządza grupami dostępu dla zamówień przypisanych do grup kooperacji
 
 #### SaveMissingAccountIdInContactsJob
 
@@ -211,4 +261,8 @@ Ujednolica wartość polu currency\_id w modułach Leady, Oferty oraz Zamówieni
 #### RecalculateAllContractsSummariesJob
 
 Przelicza na nowo wszystkie dane w tabeli contract\_summaries
+
+### CleanerForEveryWeek
+
+
 
