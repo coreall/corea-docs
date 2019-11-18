@@ -1,19 +1,22 @@
 # Senders
 
-## SendDailyNotification
+## SendDailyNotifications
 
 {% hint style="info" %}
 Uruchamia się codziennie o godzinie 04:01 AM
 {% endhint %}
 
+### SendReminderAboutUpcomingPayments
 
+Przypomnienie o nadchodzących planowanych płatnościach
 
+### ReminderAboutBillingRequestJob
 
+Przypomnienie o zleceniu fakturowania
+
+### SendReportAboutExpiredQuotesToCeoCommand.php
 
 ```php
-$schedule->command('send:daily')->dailyAt('04:01');
-
-# app\Console\Commands\Mails\SendReportAboutExpiredQuotesToCeoCommand.php
 $schedule->command('send:opportunities-expiration')->weeklyOn(1, '04:13');
 
 # app\Console\Commands\SendQuotesToApproveCommand.php
