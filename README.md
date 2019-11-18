@@ -2,9 +2,7 @@
 
 CoreA jest dedykowaną aplikacja opartą w całości o framework Laravel \(v. 5.8\) oraz VueJS.
 
-Link do dokumentacji
-
-{% embed url="https://laravel.com/docs/5.8" %}
+Link do dokumentacji [https://laravel.com/docs/5.8](https://laravel.com/docs/5.8)
 
 
 
