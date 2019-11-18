@@ -8,7 +8,7 @@ $schedule->command('send:daily')->dailyAt('04:01');
 ```
 
 {% hint style="info" %}
-Uruchamia się codziennie o godzinie 04:01 AM
+Uruchamia się codziennie o godz 04:01 AM
 {% endhint %}
 
 ### SendReminderAboutUpcomingPayments
