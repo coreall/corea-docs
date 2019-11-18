@@ -92,9 +92,7 @@ $schedule->command('send:daily-activities')->dailyAt('19:00');
 
 Każdy wpis zawiera również informację na temat tego, w jakich interwałach jest uruchamiana dana akcja. Określone jest to za pomocą metod, wywołanych po metodzie command\(\).
 
-## Commands
-
-### CleanerForEveryFiveMinutes
+## CleanerForEveryFiveMinutes
 
 {% hint style="info" %}
 Uruchamiany co każde 5 minut
@@ -102,7 +100,7 @@ Uruchamiany co każde 5 minut
 
 Wrzuca do workera następujące prace
 
-#### CheckForUnrelatedOpportunitiesJob
+### CheckForUnrelatedOpportunitiesJob
 
 Łańcuch poleceń, który
 
@@ -110,43 +108,43 @@ Wrzuca do workera następujące prace
 * Usuwa podwójne połączenia leada a kontrahentem \(pozostawia tylko najnowsze\)
 * W tabeli opportunities nadpisuje wartość w polu account\_id
 
-#### CheckForUnrelatedContractsJob
+### CheckForUnrelatedContractsJob
 
 * w tabeli aos\_contracts w polu quote\_id wpisuje identyfikator powiązanej oferty
 
-#### LeaveOnlyOneEstimatedJob
+### LeaveOnlyOneEstimatedJob
 
 Sprawdza czy na Leadzie istnieje więcej niż jedna oferta estymowana. Zdublowaną zmienia na Wariant. 
 
-#### EmptyProductsGroupsCleanerJob
+### EmptyProductsGroupsCleanerJob
 
 Usuwa utworzone tymczasowo grupy, które nie zawierają żadnych produktów
 
-#### RemoveDeletedProductsQuotesJob
+### RemoveDeletedProductsQuotesJob
 
 Usuwa produkty oznaczone jako \[deleted\].
 
-#### SynchronizeInstallationDatesJob
+### SynchronizeInstallationDatesJob
 
 Ujednolica datę instalacji w modułach Leady, Oferty oraz Zamówienia
 
-#### InOpportunitiesUpdateQuoteId
+### InOpportunitiesUpdateQuoteId
 
 W tabeli opportunities aktualizuje w polu quote\_id identyfikator powiązanej oferty estymowanej. 
 
-#### InOpportunitiesUpdateContractId
+### InOpportunitiesUpdateContractId
 
 W tabeli opportunities aktualizuje w polu quote\_id identyfikator powiązanego zamówienia \(tylko jeśli zamówienie jest oparte na prawidłowo wystawionej ofercie\). 
 
-#### InOpportunitiesUpdateTax
+### InOpportunitiesUpdateTax
 
 W tabeli opportunities aktualizuje pole tax na podstawie a\) oferty, b\) zamówienia
 
-#### UpdateProductMaincodeJob
+### UpdateProductMaincodeJob
 
 W tabeli aos\_products aktualizuje pole maincode
 
-#### DeleteRelatedDataForRemovedContract
+### DeleteRelatedDataForRemovedContract
 
 Po usunięciu zamówienia usuwa połączone rekordy z tabel
 
@@ -154,7 +152,7 @@ Po usunięciu zamówienia usuwa połączone rekordy z tabel
 * contract\_involvements
 * contract\_accountings
 
-### CleanerForEveryHour
+## CleanerForEveryHour
 
 {% hint style="info" %}
 Uruchamiane raz na godzinę
@@ -162,11 +160,11 @@ Uruchamiane raz na godzinę
 
 Wrzuca do workera następujące zadanie:
 
-#### RecalculateAllPaymentsJob
+### RecalculateAllPaymentsJob
 
 Przelicza płatności, we wszystkich zamówieniach, które mają status inny niż \[Closed\]. 
 
-### CleanerForEveryDay
+## CleanerForEveryDay
 
 {% hint style="info" %}
 Uruchamiane raz dziennie o godz. 03:03 AM
@@ -174,95 +172,99 @@ Uruchamiane raz dziennie o godz. 03:03 AM
 
 Wrzuca do workera następujące zadania:
 
-#### SecurityGroupsCleanerMaster
+### SecurityGroupsCleanerMaster
 
 Porządkuje uprawnienia na poziomie SuiteCRM wykonując następujące zadania:
 
-**\#\#\#\# RemoveDeletedSecurityGroupsRecords** 
+#### **RemoveDeletedSecurityGroupsRecords** 
 
 Z tabeli securitygroups\_record usuwa rekordy oznaczone jako \[deleted\]
 
-**ManageUnassignedPolishAccountsJob** 
+#### ManageUnassignedPolishAccountsJob 
 
 Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup. Dotyczy "polskich" rekordów.
 
-**ManageUnassignedRomanianAccountsJob** 
+#### ManageUnassignedRomanianAccountsJob 
 
 Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup. Dotyczy "rumuńskich" rekordów.
 
-**ManageUnassignedInternationalAccountsJob** 
+#### ManageUnassignedInternationalAccountsJob 
 
 Rekordy przypisane do użytkownika \[Unassigned\] przenosi do grupy \[Unassigned\] i usuwa z innych grup.
 
-**ManageAccountsAssignedToPolishSalesmakersJob** 
+#### ManageAccountsAssignedToPolishSalesmakersJob 
 
 Rekordy przypisane do "polskiego" handlowca przypisuje do grupy polskich handlowców i usuwa z grupy \[Unassigned\]
 
-**ManageAccountsAssignedToRomanianSalesmakersJob** 
+#### ManageAccountsAssignedToRomanianSalesmakersJob 
 
 Rekordy przypisane do "rumuńskiego" handlowca przypisuje do grupy rumuńskich handlowców i usuwa z grupy \[Unassigned\]
 
-**ManageAccountsAssignedToInternationalSalesmakersJob** 
+#### ManageAccountsAssignedToInternationalSalesmakersJob 
 
 Rekordy przypisane do "zagranicznego" handlowca przypisuje do grupy zagranicznych handlowców i usuwa z grupy \[Unassigned\]
 
-**ManageContactsJob** 
+#### ManageContactsJob 
 
 Usuwa grupy dostępu z rekordów w module Kontatkty. Założenie jest takie, że kontaktami zarządza się na poziomie ogólnych uprawnień, a nie przez grupy. 
 
-**ManageActivitiesGroupsJob** 
+#### ManageActivitiesGroupsJob 
 
 Usuwa grupy dostępu z rekordów w modułach Rozmowy, Zadania, Spotkania. Założenie jest takie, że kontaktami zarządza się na poziomie ogólnych uprawnień, a nie poprzez grupy. 
 
-**ManageProductsInStandardPriceListJob** 
+#### ManageProductsInStandardPriceListJob 
 
 Przypisuje wybrane produkty do standardowego cennika. 
 
-**ManageProductsInRomanianPriceListJob** 
+#### ManageProductsInRomanianPriceListJob 
 
 Przypisuje wybrane produkty do rumuńskiego cennika.
 
-**ManageOpportunitiesAssignedToSingleSalesmakerJob** 
+#### ManageOpportunitiesAssignedToSingleSalesmakerJob 
 
 Zarządza grupami dostępu dla leadów przypisanych do jednego, wybranego handlowca.
 
-**ManageOpportunitiesAssignedToCooperationGroupJob** 
+#### ManageOpportunitiesAssignedToCooperationGroupJob 
 
 Zarządza grupami dostępu dla leadów przypisanych do grup kooperacji
 
-**ManageQuotesAssignedToSingleSalesmakerJob** 
+#### ManageQuotesAssignedToSingleSalesmakerJob 
 
 Zarządza grupami dostępu dla ofert przypisanych do jednego, wybranego handlowca.
 
-**ManageQuotesAssignedToCooperationGroupJob** 
+#### ManageQuotesAssignedToCooperationGroupJob 
 
 Zarządza grupami dostępu dla ofert przypisanych do grup kooperacji
 
-**ManageContractsAssignedToSingleSalesmakerJob** 
+#### ManageContractsAssignedToSingleSalesmakerJob 
 
 Zarządza grupami dostępu dla zamówień przypisanych do jednego, wybranego handlowca.
 
-**ManageContractAssignedToCooperationGroupJob**
+#### ManageContractAssignedToCooperationGroupJob
 
 Zarządza grupami dostępu dla zamówień przypisanych do grup kooperacji
 
-#### SaveMissingAccountIdInContactsJob
+### SaveMissingAccountIdInContactsJob
 
 W tabeli contacts aktualizuje wartość w polu account\_id
 
-#### GetSnapshotOfPhoneNumbers
+### GetSnapshotOfPhoneNumbers
 
 Wyciąga wszystkie numery telefonów z modułów Kontrahenci oraz Kontakty, oczyszcza je i tworzy z nich przeszukiwalny indeks.
 
-#### SyncCurrenciesIdInSalesProcessJob
+### SyncCurrenciesIdInSalesProcessJob
 
 Ujednolica wartość polu currency\_id w modułach Leady, Oferty oraz Zamówienia
 
-#### RecalculateAllContractsSummariesJob
+### RecalculateAllContractsSummariesJob
 
 Przelicza na nowo wszystkie dane w tabeli contract\_summaries
 
-### CleanerForEveryWeek
+## CleanerForEveryWeek
+
+### AllcompCleanerJob
+
+Usuwa powiązane Leady, Oferty i KOntrakty z rekordu testowego Allcomp
 
 
 
