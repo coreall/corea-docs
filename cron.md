@@ -122,5 +122,40 @@ Wrzuca do workera następujące prace
 
 Sprawdza czy na Leadzie istnieje więcej niż jedna oferta estymowana. Zdublowaną zmienia na Wariant. 
 
+#### EmptyProductsGroupsCleanerJob
+
+Usuwa utworzone tymczasowo grupy, które nie zawierają żadnych produktów
+
+#### RemoveDeletedProductsQuotesJob
+
+Usuwa produkty oznaczone jako \[deleted\].
+
+#### SynchronizeInstallationDatesJob
+
+Ujednolica datę instalacji w modułach Leady, Oferty oraz Zamówienia
+
+#### InOpportunitiesUpdateQuoteId
+
+W tabeli opportunities aktualizuje w polu quote\_id identyfikator powiązanej oferty estymowanej. 
+
+#### InOpportunitiesUpdateContractId
+
+W tabeli opportunities aktualizuje w polu quote\_id identyfikator powiązanego zamówienia \(tylko jeśli zamówienie jest oparte na prawidłowo wystawionej ofercie\). 
+
+#### InOpportunitiesUpdateTax::dispatch\(\);
+
+W tabeli opportunities aktualizuje pole tax na podstawie a\) oferty, b\) zamówienia
+
+
+
+```text
+
+// Update aos_products.maincode if != aos_products_cstm.kod_c
+UpdateProductMaincodeJob::dispatch();
+
+// Delete records from corea app (unrelated to suiteCRM)
+DeleteRelatedDataForRemovedContract::dispatch();
+```
+
 
 
