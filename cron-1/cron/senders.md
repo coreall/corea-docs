@@ -191,7 +191,7 @@ Informacja na temat dzisiejszych urodzin
 ## SendDailyActivitiesReportCommand
 
 {% hint style="info" %}
-Wysyłane codziennie o godz 19:00
+Wysyłane codziennie o godz 07 PM:00
 {% endhint %}
 
 ```php
