@@ -2,14 +2,14 @@
 
 ## SendDailyNotifications
 
+{% hint style="info" %}
+Uruchamia się codziennie o godz 04:01 AM
+{% endhint %}
+
 ```php
 # app\Console\Commands\SendDailyNotifications.php
 $schedule->command('send:daily')->dailyAt('04:01');
 ```
-
-{% hint style="info" %}
-Uruchamia się codziennie o godz 04:01 AM
-{% endhint %}
 
 ### SendReminderAboutUpcomingPayments
 
