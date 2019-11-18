@@ -92,5 +92,13 @@ $schedule->command('send:daily-activities')->dailyAt('19:00');
 
 Każdy wpis zawiera również informację na temat tego, w jakich interwałach jest uruchamiana dana akcja. Określone jest to za pomocą metod, wywołanych po metodzie command\(\).
 
+## Commands
+
+Komendy modą zostać uruchomione z poziomu Kernela lub za pomocą wywołania metody call na objekcie Artisan
+
+```php
+Artisan::call('command:name');
+```
+
 
 
