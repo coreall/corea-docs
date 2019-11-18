@@ -151,31 +151,53 @@ Informacja na temat ankiet dotyczących badania satysfakcji klienta.
 
 ## SendNotificationAboutMultipleRelatedEmailsCommand
 
+{% hint style="info" %}
+Wysyłane każdego roboczego dnia o 07:00 AM oraz 01:00 PM.
+{% endhint %}
+
 ```php
 # app\Console\Commands\SendNotificationAboutMultipleRelatedEmailsCommand.php
 $schedule->command('send:multiple-related-emails')->weekdays()->twiceDaily(7, 13);
 ```
 
+Informacja na temat wielokrotnie przypisanych adresów email
+
 ## SendDataQualityReportCommand
+
+{% hint style="info" %}
+Wysyłane  w piątki o godz 6:00 PM
+{% endhint %}
 
 ```php
 # app\Console\Commands\SendDataQualityReportCommand.php
 $schedule->command('send:data-quality-report')->weeklyOn(5, '18:00');
 ```
 
+Informacja na temat jakości danych w CRM
+
 ## SendDailyBirthdaysReport
+
+{% hint style="info" %}
+Wysyłane codziennie o 04:05 AM
+{% endhint %}
 
 ```php
 # app\Console\Commands\SendDailyBirthdaysReport.php
 $schedule->command('send:birthdays-daily')->dailyAt('04:05');
 ```
 
+Informacja na temat dzisiejszych urodzin
+
 ## SendDailyActivitiesReportCommand
+
+{% hint style="info" %}
+Wysyłane codziennie o godz 19:00
+{% endhint %}
 
 ```php
 # app\Console\Commands\SendDailyActivitiesReportCommand.php
 $schedule->command('send:daily-activities')->dailyAt('19:00');
 ```
 
-
+Informacja na temat aktywności handlowców z Rumunii.
 
