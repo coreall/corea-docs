@@ -176,7 +176,7 @@ Wrzuca do workera następujące zadania:
 
 Porządkuje uprawnienia na poziomie SuiteCRM wykonując następujące zadania:
 
-#### RemoveDeletedSecurityGroupsRecords 
+**RemoveDeletedSecurityGroupsRecords** 
 
 Z tabeli securitygroups\_record usuwa rekordy oznaczone jako \[deleted\]
 
@@ -264,7 +264,7 @@ Przelicza na nowo wszystkie dane w tabeli contract\_summaries
 
 ### AllcompCleanerJob
 
-Usuwa powiązane Leady, Oferty i KOntrakty z rekordu testowego Allcomp
+Usuwa powiązane Leady, Oferty i Kontrakty z rekordu testowego Allcomp
 
 
 
