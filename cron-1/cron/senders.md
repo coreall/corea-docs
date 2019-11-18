@@ -112,24 +112,42 @@ Przypomnienie o szkoleniach BHP
 
 ## SendWeeklyBirthdaysReport
 
+{% hint style="info" %}
+Wysyłane raz w tygodniu w piątek o godz. 04:08 AM
+{% endhint %}
+
 ```php
 # app\Console\Commands\SendWeeklyBirthdaysReport.php
 $schedule->command('send:birthdays-weekly')->weekly()->fridays()->at('04:08');
 ```
 
+Przypomnienie o urodzinach w kolejnym tygodniu
+
 ## SendWeeklyActivitiesReportJob
+
+{% hint style="info" %}
+Wysyłane raz w tygodniu w poniedziałki o 04:09 AM
+{% endhint %}
 
 ```php
 # app\Jobs\SendWeeklyActivitiesReportJob.php
 $schedule->command('send:weekly-activities-report')->weekly()->mondays()->at('04:09');
 ```
 
+Informacja na temat aktywności handlowców  w poprzednim tygodniu
+
 ## SendQuestionnaireNotificationsCommand
+
+{% hint style="info" %}
+Wysyłane raz dziennie o 04:14 AM
+{% endhint %}
 
 ```php
 # app\Console\Commands\SendQuestionnaireNotificationsCommand.php
-$schedule->command('send:questionnaire-notifications')->dailyAt('04:14'); #needs 2 minutes
+$schedule->command('send:questionnaire-notifications')->dailyAt('04:14'); 
 ```
+
+Informacja na temat ankiet dotyczących badania satysfakcji klienta.
 
 ## SendNotificationAboutMultipleRelatedEmailsCommand
 
