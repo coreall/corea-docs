@@ -142,20 +142,21 @@ W tabeli opportunities aktualizuje w polu quote\_id identyfikator powiązanej of
 
 W tabeli opportunities aktualizuje w polu quote\_id identyfikator powiązanego zamówienia \(tylko jeśli zamówienie jest oparte na prawidłowo wystawionej ofercie\). 
 
-#### InOpportunitiesUpdateTax::dispatch\(\);
+#### InOpportunitiesUpdateTax
 
 W tabeli opportunities aktualizuje pole tax na podstawie a\) oferty, b\) zamówienia
 
+#### UpdateProductMaincodeJob
 
+W tabeli aos\_products aktualizuje pole maincode
 
-```text
+#### DeleteRelatedDataForRemovedContract
 
-// Update aos_products.maincode if != aos_products_cstm.kod_c
-UpdateProductMaincodeJob::dispatch();
+Po usunięciu zamówienia usuwa połączone rekordy z tabel
 
-// Delete records from corea app (unrelated to suiteCRM)
-DeleteRelatedDataForRemovedContract::dispatch();
-```
+* payments, 
+* contract\_involvements
+* contract\_accountings
 
 
 
