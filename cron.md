@@ -154,5 +154,15 @@ Po usunięciu zamówienia usuwa połączone rekordy z tabel
 * contract\_involvements
 * contract\_accountings
 
+### CleanerForEveryHour
 
+{% hint style="info" %}
+Uruchamiane raz na godzinę
+{% endhint %}
+
+Wrzuca do workera następujące zadanie:
+
+#### RecalculateAllPaymentsJob
+
+Przelicza płatności, we wszystkich zamówieniach, które mają status inny niż \[Closed\]. 
 
