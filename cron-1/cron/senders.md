@@ -84,71 +84,75 @@ $schedule->command('send:training-notification')->monthlyOn('1', '04:10');
 
 Przypomnienie o szkoleniach BHP
 
+## SendDailyTrainingNotification
 
+{% hint style="info" %}
+Uruchamiane codziennie o godz. 04:11 AM
+{% endhint %}
+
+Przypomnienie o szkoleniach BHP
 
 ```php
 # app\Console\Commands\SendDailyTrainingNotification.php
 $schedule->command('send:training-reminder')->dailyAt('04:11');
 ```
 
+## SendInfoAboutNextTrainings
 
+{% hint style="info" %}
+Uruchamiane każdego 16 dnia miesiąca o godz 4:10 AM
+{% endhint %}
 
 ```php
 # app\Console\Commands\SendInfoAboutNextTrainings.php
 $schedule->command('send:training-notification')->monthlyOn('16', '04:10');
 ```
 
+Przypomnienie o szkoleniach BHP
 
+## SendWeeklyBirthdaysReport
 
 ```php
 # app\Console\Commands\SendWeeklyBirthdaysReport.php
 $schedule->command('send:birthdays-weekly')->weekly()->fridays()->at('04:08');
 ```
 
-
+## SendWeeklyActivitiesReportJob
 
 ```php
 # app\Jobs\SendWeeklyActivitiesReportJob.php
 $schedule->command('send:weekly-activities-report')->weekly()->mondays()->at('04:09');
 ```
 
-
-
-
+## SendQuestionnaireNotificationsCommand
 
 ```php
 # app\Console\Commands\SendQuestionnaireNotificationsCommand.php
 $schedule->command('send:questionnaire-notifications')->dailyAt('04:14'); #needs 2 minutes
 ```
 
-
-
-
+## SendNotificationAboutMultipleRelatedEmailsCommand
 
 ```php
 # app\Console\Commands\SendNotificationAboutMultipleRelatedEmailsCommand.php
 $schedule->command('send:multiple-related-emails')->weekdays()->twiceDaily(7, 13);
 ```
 
-
-
-
+## SendDataQualityReportCommand
 
 ```php
 # app\Console\Commands\SendDataQualityReportCommand.php
 $schedule->command('send:data-quality-report')->weeklyOn(5, '18:00');
 ```
 
-
-
-
+## SendDailyBirthdaysReport
 
 ```php
 # app\Console\Commands\SendDailyBirthdaysReport.php
 $schedule->command('send:birthdays-daily')->dailyAt('04:05');
 ```
 
-
+## SendDailyActivitiesReportCommand
 
 ```php
 # app\Console\Commands\SendDailyActivitiesReportCommand.php
