@@ -13,5 +13,7 @@ Każdy wpis zawiera również informację na temat tego, w jakich interwałach j
 
 ### Commands
 
+C:\Users\piotr.skrobol\Projects\corea\app\Console\Commands\SendQuotesToApproveCommand.php
+
 
 
