@@ -21,50 +21,59 @@ Przypomnienie o zleceniu fakturowania
 
 ## SendReportAboutExpiredQuotesToCeoCommand
 
+{% hint style="info" %}
+Uruchamia się raz w tygodniu o godz. 04:13 AM
+{% endhint %}
+
 ```php
 # app\Console\Commands\Mails\SendReportAboutExpiredQuotesToCeoCommand.php
 $schedule->command('send:opportunities-expiration')->weeklyOn(1, '04:13');
 ```
 
-{% hint style="info" %}
-Uruchamia się raz w tygodniu o godz. 04:13 AM
-{% endhint %}
-
 Wysyła informację na temat kończących się oraz przeterminowanych ofert do Pana Prezesa oraz przypisanych handlowców
 
 ## SendQuotesToApproveCommand
+
+{% hint style="info" %}
+Uruchamia się raz dziennie o godz 6:00 PM
+{% endhint %}
 
 ```php
 # app\Console\Commands\SendQuotesToApproveCommand.php
 $schedule->command('send:quotes-to-approve')->dailyAt('18:00');
 ```
 
-{% hint style="info" %}
-Uruchamia się raz dziennie o godz 6:00 PM
-{% endhint %}
-
 Wysyła do Prezesa informację na temat tego czy są jakieś oferty oczekują na akceptację.
 
 ## NotifyAboutEmployeesCommand
+
+{% hint style="info" %}
+Uruchamiane się raz dziennie o godz 04:21 AM
+{% endhint %}
 
 ```php
 # app\Console\Commands\NotifyAboutEmployeesCommand.php
 $schedule->command('users:notify-about-employees')->dailyAt('04:21');
 ```
 
-{% hint style="info" %}
-Uruchamiane się raz dziennie o godz 04:21 AM
-{% endhint %}
-
 Na podstawie wpisów w rejestrze \[Pracownicy\] - tworzy lub dezaktywuje konta użytkowników w CoreA oraz powiadamia o tym, czy dani pracownicy mają założone konta w Redmine.
 
-```php
-# app\Console\Commands\NotifyAboutEmployeesCommand.php
-$schedule->command('users:notify-about-employees')->dailyAt('04:21');
+## SendNotificationAboutUnsentRodoCommand
 
+{% hint style="info" %}
+Uruchamia się raz w tygodniu w poniedziałki o 04:21 AM
+{% endhint %}
+
+```php
 # app\Console\Commands\SendNotificationAboutUnsentRodoCommand.php
 $schedule->command('send:unsent-rodo')->weeklyOn(1, '04:21');
+```
 
+Wysyła informację do odnośnie adresów email, wobec których nie została zrealizowany obowiązek informacyjny UODO.
+
+
+
+```php
 # app\Console\Commands\SendInfoAboutNextTrainings.php
 $schedule->command('send:training-notification')->monthlyOn('1', '04:10');
 
