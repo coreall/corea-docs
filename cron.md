@@ -178,7 +178,7 @@ Wrzuca do workera następujące zadania:
 
 Porządkuje uprawnienia na poziomie SuiteCRM wykonując następujące zadania:
 
-**RemoveDeletedSecurityGroupsRecords** 
+**\#\#\#\# RemoveDeletedSecurityGroupsRecords** 
 
 Z tabeli securitygroups\_record usuwa rekordy oznaczone jako \[deleted\]
 
