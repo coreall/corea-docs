@@ -1,4 +1,5 @@
 # Table of contents
 
-* [CRON](README.md)
+* [Wstęp](README.md)
+* [CRON](cron.md)
 
