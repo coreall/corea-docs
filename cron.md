@@ -1,6 +1,10 @@
+---
+description: Cykliczne akcje
+---
+
 # CRON
 
-### Kernel
+## Kernel
 
 Automatyczne akcje zapisane są w klasie  **app\Console\Kernel.php** w metodzie schedule\(\). Każda z linii wywołujących komendę odpowiada wpisowi do CRONA. Komentarz przy każdej komendzie wskazuje na klasę, która zostaje uruchomiona w danej akcji.
 
@@ -92,7 +96,31 @@ $schedule->command('send:daily-activities')->dailyAt('19:00');
 
 Każdy wpis zawiera również informację na temat tego, w jakich interwałach jest uruchamiana dana akcja. Określone jest to za pomocą metod, wywołanych po metodzie command\(\).
 
-### 
+## Commands
+
+### CleanerForEveryFiveMinutes
+
+{% hint style="info" %}
+Uruchamiany co każde 5 minut
+{% endhint %}
+
+Wrzuca do workera następujące prace
+
+#### CheckForUnrelatedOpportunitiesJob
+
+Łańcuch poleceń, który
+
+* Usuwa wpisy oznaczone jako deleted z tabeli accounts\_opportunities
+* Usuwa podwójne połączenia leada a kontrahentem \(pozostawia tylko najnowsze\)
+* W tabeli opportunities nadpisuje wartość w polu account\_id
+
+#### CheckForUnrelatedContractsJob
+
+* w tabeli aos\_contracts w polu quote\_id wpisuje identyfikator powiązanej oferty
+
+#### LeaveOnlyOneEstimatedJob
+
+Sprawdza czy na Leadzie istnieje więcej niż jedna oferta estymowana. Zdublowaną zmienia na Wariant. 
 
 
 
