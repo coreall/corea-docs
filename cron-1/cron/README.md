@@ -4,6 +4,14 @@
 
 Automatyczne akcje zapisane są w klasie  **app\Console\Kernel.php** w metodzie schedule\(\). Każda z linii wywołujących komendę odpowiada wpisowi do CRONA. Komentarz przy każdej komendzie wskazuje na klasę, która zostaje uruchomiona w danej akcji.
 
+Dla przejrzystości zostały one podzielone na 3 sekcje
+
+* **Cleaners** - poprawiają dane w wybranych tabelach lub usuwają niespójności pomiędzy danymi
+* **Updaters** - Aktualizują zbiorcze raporty, pobierają dane, tworzą snapshoty
+* **Senders** - wysyłają powiadomienia
+
+
+
 ```php
 /**
  * CLEANERS
